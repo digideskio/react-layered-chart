@@ -10,7 +10,8 @@ import SelectFromStore from './mixins/SelectFromStore';
 class ReduxChartWrapper extends React.Component {
   static propTypes = {
     store: React.PropTypes.object.isRequired,
-    children: React.PropTypes.element.isRequired
+    children: React.PropTypes.element.isRequired,
+    seriesIds: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
   };
 
   static selectFromStore = {
@@ -44,7 +45,17 @@ class ReduxChartWrapper extends React.Component {
       onPan: this._onPan,
       onZoom: this._onZoom,
       onBrush: this._onBrush
-    }, this.state));
+    }, this._denormalizeSeries(), _.pick(this.state, 'selection', 'hover', 'xDomain')));
+  }
+
+  _denormalizeSeries() {
+    const series = this.props.seriesIds.map(seriesId => ({
+      seriesId,
+      yDomain: this.state.yDomainBySeriesId[seriesId],
+      data: this.state.dataBySeriesId[seriesId] || [],
+      layerProps: this.state.metadataBySeriesId[seriesId]
+    }));
+    return { series };
   }
 }
 

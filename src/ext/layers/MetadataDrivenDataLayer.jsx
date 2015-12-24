@@ -9,7 +9,8 @@ import PointLayer from '../../core/layers/PointLayer';
 import TimeSpanLayer from '../../core/layers/TimeSpanLayer';
 
 import LayerType from '../LayerType';
-import propTypes from '../../core/propTypes';
+import corePropTypes from '../../core/propTypes';
+import propTypes from '../propTypes';
 
 const LAYER_BY_TYPE = {
   [LayerType.SIMPLE_LINE]: SimpleLineLayer,
@@ -22,44 +23,38 @@ const LAYER_BY_TYPE = {
 @PureRender
 class MetadataDrivenDataLayer extends React.Component {
   static propTypes = {
-    xDomain: propTypes.range.isRequired,
-    yDomainBySeriesId: React.PropTypes.objectOf(propTypes.range).isRequired,
-    metadataBySeriesId: React.PropTypes.objectOf(React.PropTypes.object).isRequired,
-    dataBySeriesId: React.PropTypes.object.isRequired,
-    seriesIds: React.PropTypes.arrayOf(React.PropTypes.string).isRequired
+    xDomain: corePropTypes.range.isRequired,
+    series: React.PropTypes.arrayOf(propTypes.series).isRequired
   };
 
   render() {
     return (
       <div className='layer metadata-driven-data-layer'>
-        {this.props.seriesIds.map(this._getLayerForSeriesId)}
+        {this.props.series.map(this._getLayerForSeries)}
       </div>
     );
   }
 
-  _getLayerForSeriesId = (seriesId) => {
-    const metadata = this.props.metadataBySeriesId[seriesId] || {};
-
+  _getLayerForSeries = (series) => {
     const baseLayerProps = _.extend({
       xDomain: this.props.xDomain,
-      yDomain: this.props.yDomainBySeriesId[seriesId]
-    }, metadata);
+    }, _.omit(series, 'layerProps'), series.layerProps);
 
-    if (metadata.layerType === LayerType.GROUP) {
-      return <div className='layer-group' key={seriesId}>
-        {metadata.groupedSeries.map(({ seriesId, layerType}) =>
+    if (series.layerProps.layerType === LayerType.GROUP) {
+      return <div className='layer-group' key={series.seriesId}>
+        {series.layerProps.groupedSeries.map(({ seriesId, layerType}) =>
           this._renderBaseLayer(layerType, seriesId, baseLayerProps)
         )}
       </div>
     } else {
-      return this._renderBaseLayer(metadata.layerType, seriesId, baseLayerProps);
+      return this._renderBaseLayer(series.layerProps.layerType, series.seriesId, baseLayerProps);
     }
   }
 
   _renderBaseLayer(layerType, seriesId, baseLayerProps) {
     const LayerClass = LAYER_BY_TYPE[layerType];
     if (LayerClass) {
-      return <LayerClass {...baseLayerProps} key={seriesId} data={this.props.dataBySeriesId[seriesId]}/>
+      return <LayerClass {...baseLayerProps} key={seriesId}/>
     } else {
       console.warn('not rendering data layer of unknown type ' + metadata.layerType);
       return null;

@@ -136,16 +136,16 @@ store.subscribe(() => {
 });
 
 const chart = <div className='many-charts'>
-  <ReduxChartWrapper store={store}>
-    <DefaultChart seriesIds={[ 'uuid-5-group' ]}/>
+  <ReduxChartWrapper store={store} seriesIds={[ 'uuid-5-group' ]}>
+    <DefaultChart/>
   </ReduxChartWrapper>
 
-  <ReduxChartWrapper store={store}>
-    <SparklineChart seriesIds={[ 'uuid-1' ]}/>
+  <ReduxChartWrapper store={store} seriesIds={[ 'uuid-1' ]}>
+    <SparklineChart/>
   </ReduxChartWrapper>
 
-  <ReduxChartWrapper store={store}>
-    <CombinedLogChart seriesIds={[ 'uuid-4' ]}/>
+  <ReduxChartWrapper store={store} seriesIds={[ 'uuid-4' ]}>
+    <CombinedLogChart/>
   </ReduxChartWrapper>
 </div>
 

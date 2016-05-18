@@ -5,12 +5,13 @@ import d3Scale from 'd3-scale';
 import { decorator as CanvasRender } from '../mixins/CanvasRender';
 import { decorator as AnimateProps } from '../mixins/AnimateProps';
 import { decorator as PixelRatioContext } from '../mixins/PixelRatioContext';
+import { decorator as PerfDebugPureRender } from '../mixins/PerfDebugPureRender';
 
 import AutoresizingCanvasLayer from './AutoresizingCanvasLayer';
 import { getBoundsForTimeSpanData } from '../util';
 import propTypes from '../propTypes';
 
-@PureRender
+@PerfDebugPureRender
 @CanvasRender
 @AnimateProps
 @PixelRatioContext

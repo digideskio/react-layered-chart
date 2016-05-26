@@ -1,0 +1,48 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "bluebird/bluebird.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "jquery/jquery.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "lodash/lodash.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "react-redux/react-redux.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "react/react.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "redux/redux.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "redux-debounced/redux-debounced.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "reselect/reselect.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "redux-logger/redux-logger.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "redux-thunk/redux-thunk.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "classnames/classnames.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "immutability-helper/immutability-helper.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    },
+    "pure-render-decorator/pure-render-decorator.d.ts": {
+      "commit": "7ad4e09016898d9c4837e250121fef2aedbecaaa"
+    }
+  }
+}

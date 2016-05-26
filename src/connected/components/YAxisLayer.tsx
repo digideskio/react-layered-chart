@@ -1,11 +1,10 @@
 import * as React from 'react';
 import * as PureRender from 'pure-render-decorator';
 import { connect } from 'react-redux';
-import { Range, layers } from 'react-layered-chart';
 const { YAxisLayer: LayeredChartYAxisLayer } = layers;
 
 import { DEFAULT_Y_DOMAIN } from '../model/constants';
-import { SeriesId, TBySeriesId } from '../model/typedefs';
+import { Range, SeriesId, TBySeriesId } from '../model/typedefs';
 import { SeriesMetadata, ChartState } from '../model/state';
 import { selectYDomains } from '../model/selectors';
 

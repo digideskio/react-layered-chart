@@ -1,6 +1,6 @@
 import * as moment from 'moment';
 
-import { Range } from 'react-layered-chart';
+import { Range } from './typedefs';
 
 export const DEFAULT_X_DOMAIN: Range = {
   min: moment().subtract(1, 'month').valueOf(),

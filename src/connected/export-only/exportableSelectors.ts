@@ -1,6 +1,3 @@
-// Range is not actually an unused import: tsc needs this name in scope to compile a definition for some reason.
-import { Range, DataPoint, DataBucket } from 'react-layered-chart';
-
 import * as _ from 'lodash';
 import { createSelector } from 'reselect';
 import {
@@ -11,7 +8,7 @@ import {
 } from '../model/selectors';
 import { ChartState, SeriesMetadata } from '../model/state';
 import { LayerCakeChartState } from './exportableState';
-import { SeriesId, TBySeriesId } from '../model/typedefs';
+import { Range, DataPoint, DataBucket, SeriesId, TBySeriesId } from '../model/typedefs';
 
 function _wrapForTypeCast<T>(selector: (state: ChartState) => T): (state: LayerCakeChartState) => T {
   return (state: LayerCakeChartState) => selector(state as any as ChartState);

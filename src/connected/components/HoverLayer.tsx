@@ -1,9 +1,9 @@
 import * as React from 'react';
 import * as PureRender from 'pure-render-decorator';
 import { connect } from 'react-redux';
-import { layers, Range } from 'react-layered-chart';
 const { HoverLayer: LayeredChartHoverLayer } = layers;
 
+import { Range } from '../model/typedefs';
 import { ChartState } from '../model/state';
 import { selectHover, selectXDomain } from '../model/selectors';
 

@@ -1,15 +1,15 @@
 import * as React from 'react';
 import * as PureRender from 'pure-render-decorator';
 import { connect } from 'react-redux';
-import { Range, HexColor, layers } from 'react-layered-chart';
 const { XAxisLayer: LayeredChartXAxisLayer } = layers;
 
+import { Range, Color } from '../model/typedefs';
 import { ChartState } from '../model/state';
 import { selectXDomain } from '../model/selectors';
 
 export interface OwnProps {
   font?: string;
-  color?: HexColor;
+  color?: Color;
 }
 
 export interface ConnectedProps {

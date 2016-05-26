@@ -1,8 +1,6 @@
-import { Range, ScaleFunction, HexColor } from 'react-layered-chart';
-
 import LayerType from './LayerType';
 import { DEFAULT_X_DOMAIN } from './constants';
-import { SeriesId, TBySeriesId, DataLoader, SeriesData } from './typedefs';
+import { Range, ScaleFunction, HexColor, SeriesId, TBySeriesId, DataLoader, SeriesData } from './typedefs';
 import computedChannelsLoader from '../flux/computedChannelsLoader';
 
 export interface DefaultChartState {

@@ -1,10 +1,9 @@
 import * as _ from 'lodash';
-import { Range, DataPoint, DataBucket } from 'react-layered-chart';
 
 import ActionType, { Action } from '../model/ActionType';
 import LayerType from '../model/LayerType';
 import { SeriesMetadata, ChartState} from '../model/state';
-import { SeriesId, TBySeriesId, DataLoader, SeriesData } from '../model/typedefs';
+import { Range, DataPoint, DataBucket, SeriesId, TBySeriesId, DataLoader, SeriesData } from '../model/typedefs';
 import ThunkInterface = ReduxThunk.ThunkInterface;
 import { setYDomain } from './uiActions';
 import { selectXDomain } from '../model/selectors';

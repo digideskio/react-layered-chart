@@ -1,9 +1,8 @@
 import * as _ from 'lodash';
-import { Range } from 'react-layered-chart';
 import { createSelector } from 'reselect';
 
 import { ChartState, UiState } from './state';
-import { TBySeriesId } from './typedefs';
+import { Range, TBySeriesId } from './typedefs';
 
 const selectUiStateInternal = (state: ChartState) => state.uiState;
 const selectUiStateOverride = (state: ChartState) => state.uiStateConsumerOverrides;

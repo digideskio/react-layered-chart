@@ -3,10 +3,10 @@ import * as PureRender from 'pure-render-decorator';
 import * as classNames from 'classnames';
 import { Store } from 'redux';
 import { Provider } from 'react-redux';
-import { Stack, Range } from 'react-layered-chart';
 
+import Stack from '../../core/Stack';
 import storeFactory from '../flux/storeFactory';
-import { ChartId, SeriesId, TBySeriesId, DataLoader } from '../model/typedefs';
+import { Range, ChartId, SeriesId, TBySeriesId, DataLoader } from '../model/typedefs';
 import { SeriesMetadata, DefaultChartState, ChartState } from '../model/state';
 import { setXDomain, setYDomain, setHover, setSelection } from '../flux/uiActions';
 import { setMetadata, setSeriesIds, setDataLoader } from '../flux/dataActions';
